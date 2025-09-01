@@ -6,11 +6,12 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#services', label: 'Dienstleistungen' },
-    { href: '#approach', label: 'Arbeitsweise' },
-    { href: '#experience', label: 'Erfahrung' },
-    { href: '#contact', label: 'Kontakt' },
+    { href: 'https://www.sigmacommunication.de/', label: 'Home', external: true },
+    { href: 'https://www.sigmacommunication.de/#services', label: 'Dienstleistungen', external: true },
+    { href: 'https://www.sigmacommunication.de/#approach', label: 'Arbeitsweise', external: true },
+    { href: 'https://www.sigmacommunication.de/#erfahrung', label: 'Erfahrung', external: true },
+    { href: '/Profil-Christian_Gasche-2025.pdf', label: 'Profil (PDF)', external: true },
+    { href: 'https://www.sigmacommunication.de/#kontakt', label: 'Kontakt', external: true },
   ];
 
   return (
@@ -30,6 +31,8 @@ export const Header = () => {
               <a
                 key={item.href}
                 href={item.href}
+                target={item.external ? '_blank' : '_self'}
+                rel={item.external ? 'noopener noreferrer' : undefined}
                 className="text-text-secondary hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.label}
@@ -38,7 +41,10 @@ export const Header = () => {
           </nav>
 
           <div className="hidden md:flex">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => window.open('mailto:cgasche@sigmacommunication.de?subject=Erstberatung%20Anfrage', '_blank')}
+            >
               Erstberatung buchen
             </Button>
           </div>
@@ -65,13 +71,18 @@ export const Header = () => {
                 <a
                   key={item.href}
                   href={item.href}
+                  target={item.external ? '_blank' : '_self'}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
                   className="block text-text-secondary hover:text-primary transition-colors duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-4">
+              <Button 
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-4"
+                onClick={() => window.open('mailto:cgasche@sigmacommunication.de?subject=Erstberatung%20Anfrage', '_blank')}
+              >
                 Erstberatung buchen
               </Button>
             </nav>
