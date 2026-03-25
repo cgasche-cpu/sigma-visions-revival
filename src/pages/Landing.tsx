@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Mic, FileText, Sparkles, CheckCircle, Users, Award, BookOpen } from 'lucide-react';
+import heroMicrophone from '@/assets/hero-microphone.jpg';
 import { useNavigate } from 'react-router-dom';
 
 const fadeUp = {
@@ -58,11 +59,14 @@ const Landing = () => {
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-hero-gradient">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-primary/3 blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-hero-text/5" />
+      {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src={heroMicrophone}
+            alt="Mikrofon auf Bühne"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-hero-gradient opacity-75" />
         </div>
 
         <div className="relative container mx-auto px-6 pt-24 pb-16">
