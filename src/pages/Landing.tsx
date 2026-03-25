@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Mic, FileText, Sparkles, CheckCircle, Users, Award, BookOpen } from 'lucide-react';
+import heroMicrophone from '@/assets/hero-microphone.jpg';
 import { useNavigate } from 'react-router-dom';
 
 const fadeUp = {
